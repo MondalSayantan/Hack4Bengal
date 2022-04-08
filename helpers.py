@@ -9,3 +9,5 @@ def display_skills(skills, github_username):
         base = f'''<a href= {link} > <img width ='32px' src ='{'https://raw.githubusercontent.com/rahulbanerjee26/githubAboutMeGenerator/main/icons/'+skill+'.svg'}'> </a>'''
         result.append(base)
     return '\n'.join(result)
+
+
