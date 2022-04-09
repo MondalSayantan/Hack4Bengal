@@ -5,7 +5,7 @@ def display_skills(skills,github_username):
 
     for skill in skills:
         link = f'https://github.com/{github_username}?tab=repositories&q=&type=&language={skill}&sort='
-        base = f'''<a href= {link} > <img width ='32px' src ='{'https://raw.githubusercontent.com/rahulbanerjee26/githubAboutMeGenerator/main/icons/'+skill+'.svg'}'> </a>'''
+        base = f'''<a href= {link} > <img width ='32px' src ='{'https://raw.githubusercontent.com/MondalSayantan/Hack4Bengal/main/resources/icons/'+skill+'.svg'}'> </a>'''
         result.append(base)
     return '\n'.join(result)
 
@@ -13,34 +13,22 @@ def display_socials(linkedin,twitter,medium,portfolio,github):
     result = ''
     if linkedin != '':
         linkedin = 'https://www.linkedin.com/in/'+linkedin
-        result += f'''<a href = '{linkedin}'> <img width = '32px' align= 'center' src="https://raw.githubusercontent.com/rahulbanerjee26/githubAboutMeGenerator/main/icons/linked-in-alt.svg"/></a> \n'''
+        result += f'''<a href = '{linkedin}'> <img width = '32px' align= 'center' src="https://raw.githubusercontent.com/MondalSayantan/Hack4Bengal/main/resources/icons/linked-in-alt.svg"/></a> \n'''
     
     if twitter != '':
         twitter = 'https://www.twitter.com/'+twitter
-        result += f'''<a href = '{twitter}'> <img width = '32px' align= 'center' src="https://raw.githubusercontent.com/rahulbanerjee26/githubAboutMeGenerator/main/icons/twitter.svg"/></a> \n'''
+        result += f'''<a href = '{twitter}'> <img width = '32px' align= 'center' src="https://raw.githubusercontent.com/MondalSayantan/Hack4Bengal/main/resources/icons/twitter.svg"/></a> \n'''
     
     if medium != '':
-        result += f'''<a href = '{medium}'> <img width = '32px' align= 'center' src="https://raw.githubusercontent.com/rahulbanerjee26/githubAboutMeGenerator/main/icons/medium.svg"/></a> \n'''
+        result += f'''<a href = '{medium}'> <img width = '32px' align= 'center' src="https://raw.githubusercontent.com/MondalSayantan/Hack4Bengal/main/resources/icons/medium.svg"/></a> \n'''
     
     if portfolio != '':
-        result += f'''<a href = '{portfolio}'> <img width = '32px' align= 'center' src="https://raw.githubusercontent.com/rahulbanerjee26/githubAboutMeGenerator/main/icons/portfolio.png"/></a> \n'''    
+        result += f'''<a href = '{portfolio}'> <img width = '32px' align= 'center' src="https://raw.githubusercontent.com/MondalSayantan/Hack4Bengal/main/resources/icons/portfolio.png"/></a> \n'''    
     
     if github != '':
         github = 'https://www.github.com/'+github   
-        result += f'''<a href = '{github}'> <img width = '32px' align= 'center' src="https://raw.githubusercontent.com/rahulbanerjee26/githubAboutMeGenerator/main/icons/github.svg"/></a> \n'''
+        result += f'''<a href = '{github}'> <img width = '32px' align= 'center' src="https://raw.githubusercontent.com/MondalSayantan/Hack4Bengal/main/resources/icons/github.svg"/></a> \n'''
     return result
-
-def show_waka(isWaka,waka_userName):
-    if isWaka:
-        return f'''
-<h2> Stuff I worked on last week  <img src = "https://media1.giphy.com/media/JZ40cnfnN11KycrvMF/giphy.gif?cid=ecf05e47a0n3gi1bfqntqmob8g9aid1oyj2wr3ds3mg700bl&rid=giphy.gif" width = 70px> </h2>
-<a href="https://github.com/anuraghazra/github-readme-stats">
-<img align="center" src="https://github-readme-stats.vercel.app/api/wakatime?username=@{waka_userName}&compact=True"/>
-</a>
-<br>
-'''
-    else:
-        return ''
 
 def show_github_stats(github_username,theme,choice = 'type-2'):
     if choice == 'type-1':
@@ -65,17 +53,9 @@ def show_joke(isJoke,theme):
     else:
         return ''
 
-def show_blog(is_blog):
-    if is_blog:
-        return '''
-<h2> My Blog Posts </h2>
 
-<!-- BLOG-POST-LIST:START -->
-<!-- BLOG-POST-LIST:END -->
-'''
-    return ''
 
-def default_html(name = 'Rahul', linkedin_url = '',twitter_url = '',medium_url='',portfolio_url='',waka_userName = 'rahulbanerjee26',github_username = 'rahulbanerjee26',p1='......',p2='.......',p3='.........',p4='.........',skills=[],isWaka = False,github_stats_theme = 'dark',isJoke = False,
+def default_html(name = 'Shrey', linkedin_url = '',twitter_url = '',medium_url='',portfolio_url='',github_username = 'HawkingRadiation42',p1='......',p2='.......',p3='.........',p4='.........',skills=[],github_stats_theme = 'dark',isJoke = False,
 joke_theme = 'dark',img_url = '',img_width='',img_height='',github_stats_type = 'type-1',isBlog = False):
     return f'''
 <div align="center">
@@ -84,8 +64,6 @@ joke_theme = 'dark',img_url = '',img_width='',img_height='',github_stats_type = 
 
 <h1> Hello Fellow < Developers/ >! <img src = "https://raw.githubusercontent.com/MartinHeinz/MartinHeinz/master/wave.gif" width = 50px> </h1>
 <p align='center'>
-
-![visitors](https://visitor-badge.glitch.me/badge?page_id={github_username+'.'+github_username})
 
 </p>
 <div size='20px'> Hi! My name is {name}. Thank You for taking the time to view my GitHub Profile :smile: 
@@ -109,40 +87,19 @@ joke_theme = 'dark',img_url = '',img_width='',img_height='',github_stats_type = 
 
 
 <h2> Connect with me <img src='https://raw.githubusercontent.com/ShahriarShafin/ShahriarShafin/main/Assets/handshake.gif' width="100px"> </h2>
-{display_socials(linkedin_url,twitter_url,medium_url,portfolio_url,github_username)}
-{show_waka(isWaka,waka_userName)}
+{display_socials(linkedin_url,  twitter_url,  medium_url, portfolio_url,  github_username)}
+
 
 <h2> My GitHub Stats <img src='https://media1.giphy.com/media/du3J3cXyzhj75IOgvA/giphy.gif?cid=ecf05e47x2g034i9pzwtzzsd3xgg2w9nr94t4tflbbgo3008&rid=giphy.gif' width='32px'> </h2>
 
 {show_github_stats(github_username,github_stats_theme,github_stats_type)}
-{show_blog(isBlog)}
+
 {show_joke(isJoke,joke_theme)}
 
 <br>
-<footer align='center'>README made with help of <a href='https://github.com/rahulbanerjee26/githubProfileReadmeGenerator'>githubProfileReadmeGenerator</a> </footer>
+<footer align='center'>README made with help of <a href='https://github.com/MondalSayantan/Hack4Bengal'>githubProfileReadmeGenerator</a> </footer>
 '''
 
-
-def get_yml(feed_url):
-    yml_file = f'''
-name: Latest blog post workflow
-on:
-schedule: # Run workflow automatically
-- cron: '0 * * * *' # Runs every hour, on the hour
-workflow_dispatch: # Run workflow manually (without waiting for the cron to be called), through the Github Actions Workflow page directly
-jobs:
-update-readme-with-blog:
-name: Update this repo's README with latest blog posts
-runs-on: ubuntu-latest
-steps:
-- uses: actions/checkout@v2
-- uses: gautamkrishnar/blog-post-workflow@master
-    with:
-    feed_list: "{feed_url}"
-    '''
-    b64 = base64.b64encode(yml_file.encode()).decode()
-    href = f'<a href="data:file/csv;base64,{b64}" download="blog-post-workflow.yml">Download yml file</a>'
-    return href
 
 def download_readme(code):
     b64 = base64.b64encode(code.encode()).decode()
